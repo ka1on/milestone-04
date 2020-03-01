@@ -2,7 +2,7 @@
 title: "milestone-04"
 author: "Katie Cao"
 date: "2/29/2020"
-output: html_document
+output: bookdown::pdf_document2
 bibliography: example.bib
 ---
 
@@ -24,7 +24,7 @@ library(tidyverse)
 
 ## Footnote {-}
 
-This is my Milestone 4 pdf document. More information can be found in my github repo.^[[Katie Cao Github Repo](https://github.com/ka1on/milestone-04)]. The error "! sh: pdflatex: command not found" found in my log prevents the pdf for being knit.
+This is my Milestone 4 pdf document. More information can be found in my github repo.^[[Katie Cao Github Repo](https://github.com/ka1on/milestone-04)].
 
 ## Table of Fake Data {-}
 
