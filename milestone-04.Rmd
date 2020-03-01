@@ -24,7 +24,7 @@ library(tidyverse)
 
 ## Footnote {-}
 
-This is my Milestone 4 pdf document. More information can be found in my github repo.^[[Katie Cao Github Repo](https://github.com/ka1on/milestone-04)].
+This is my Milestone 4 pdf document. More information can be found in my github repo.^[[Katie Cao Github Repo](https://github.com/ka1on/milestone-04)]. Here are my references @R-stringr @R-knitr.
 
 ## Table of Fake Data {-}
 
