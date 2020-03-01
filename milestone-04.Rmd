@@ -1,0 +1,56 @@
+---
+title: "milestone-04"
+author: "Katie Cao"
+date: "2/29/2020"
+output: html_document
+bibliography: example.bib
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::write_bib(c("knitr", "stringr"), "example.bib", width = 60)
+
+#Load in libraries
+library(bookdown)
+library(gt)
+library(gtsummary)
+library(rstanarm)
+library(stargazer)
+library(gapminder)
+library(tidyverse)
+
+```
+
+
+## Footnote {-}
+
+This is my Milestone 4 pdf document. More information can be found in my github repo.^[[Katie Cao Github Repo](https://github.com/ka1on/milestone-04)]. The error "! sh: pdflatex: command not found" found in my log prevents the pdf for being knit.
+
+## Table of Fake Data {-}
+
+```{r gt, echo=FALSE}
+#Create a tibble of 10 observations
+fake_data <- tibble(id = 1:10)
+#Map whether or not the subject received treatment onto the data with a 50:50 sample
+fake_data %>%
+  mutate(Treatment = map_chr(fake_data$id, ~sample(c("Treatment", "Control"), size = 1, prob = c(0.5, 0.5)))) %>%
+  #Show the fake data in a table
+  gt() %>%
+  tab_header(title = "Fake Data of Students With Pets",
+             subtitle = "60% chance of each student having a dog, 40% of cat")
+```
+
+## Regression Table {-}
+
+```{r regression, echo=FALSE}
+#Use the gapminder data of countries and various growth indicators
+x <- gapminder
+
+#Specifically, regress year, population, and gdp onto life expectancy to find correlations
+model <- glm(data = x, formula = lifeExp ~ year + pop + gdpPercap)
+#Use tbl_regression() to view the regression in a table
+model %>%
+  tbl_regression()
+```
+
+## References {-}
